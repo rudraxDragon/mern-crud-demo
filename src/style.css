@@ -1,0 +1,224 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "JetBrains Mono";
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+}
+
+.data_box {
+  background-color: papayawhip;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid burlywood;
+  border-radius: 10px;
+  min-width: 500px;
+  max-width: 90vw;
+  width: fit-content;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.5s ease-out;
+  padding: 10px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+#heading {
+  margin-right: 20px;
+}
+
+.btn {
+  font-size: 20px;
+  background-color: bisque;
+  border: 2px solid burlywood;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding-inline: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: burlywood;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#input_box {
+  font-size: 20px;
+  border: 2px solid burlywood;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all 0.3s ease;
+}
+
+#input_box:focus {
+  outline: none;
+  border-color: #d4a574;
+  box-shadow: 0 0 10px rgba(222, 184, 135, 0.5);
+  transform: scale(1.02);
+}
+
+.opration_controller {
+  margin-top: 10px;
+}
+
+.opration_controller button {
+  margin-inline: 10px;
+}
+
+.form_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.update_ID_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.update_ID_box input {
+  margin-block: 10px;
+  width: 150px;
+  font-size: 20px;
+  border: 2px solid burlywood;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all 0.3s ease;
+}
+
+.update_ID_box input:focus {
+  outline: none;
+  border-color: #d4a574;
+  box-shadow: 0 0 10px rgba(222, 184, 135, 0.5);
+  transform: scale(1.02);
+}
+
+.update_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.delete_ID_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.delete_ID_box input {
+  margin-block: 10px;
+  width: 150px;
+  font-size: 20px;
+  border: 2px solid burlywood;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all 0.3s ease;
+}
+
+.delete_ID_box input:focus {
+  outline: none;
+  border-color: #d4a574;
+  box-shadow: 0 0 10px rgba(222, 184, 135, 0.5);
+  transform: scale(1.02);
+}
+
+.delete_successful {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.read_box {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+table {
+  margin: 20px;
+  border-collapse: collapse;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table thead {
+  background-color: burlywood;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+table tbody tr:hover {
+  background-color: bisque;
+  cursor: pointer;
+}
+
+table tbody tr:last-child {
+  border-bottom: none;
+}
