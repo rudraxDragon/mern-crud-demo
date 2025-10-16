@@ -178,7 +178,7 @@ export default function App() {
       <div className="data_box" >
 
         <div className="civility-message">
-          <p>👋 Welcome! Please be respectful and avoid using abusive language. Thank you for keeping this space friendly! ( Im using a free server so the loading time might take a few mins :( </p>
+          <p>👋 Welcome! Please be respectful and avoid using abusive language. Thank you for keeping this space friendly! Im using a free server so the loading time might take a few mins for the first fetch :( </p>
         </div>
 
         <div className="opration_controller">
