@@ -13,7 +13,6 @@ backend/.env
 # Build outputs
 dist/
 dist-ssr/
-build/
 
 # Logs
 *.log

@@ -19,7 +19,7 @@ export default function App() {
   const [grabID, setGrabID] = useState('')
   const [productLoaded, setProductLoaded] = useState(false)
 
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  const API_URL = 'https://mern-crud-demo.onrender.com' || 'http://localhost:5000';
 
   const fetchProducts = async () => {
     const response = await fetch(`${API_URL}/api/products`)
@@ -176,6 +176,10 @@ export default function App() {
   return (
     <>
       <div className="data_box" >
+
+        <div className="civility-message">
+          <p>👋 Welcome! Please be respectful and avoid using abusive language. Thank you for keeping this space friendly!</p>
+        </div>
 
         <div className="opration_controller">
           <button type="button" className="btn" onClick={handleCreate}>Create</button>
