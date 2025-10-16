@@ -1,16 +1,150 @@
-# React + Vite
+# MERN CRUD Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack product management application demonstrating CRUD operations using the MERN stack (MongoDB, Express, React, Node.js) with a RESTful API.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ **Create** products with name, quantity, and price
+- 📖 **Read** all products in a table view
+- ✏️ **Update** existing products by ID
+- 🗑️ **Delete** products by ID
+- 🎨 Clean and responsive UI
+- 🔄 Real-time data synchronization with MongoDB
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Frontend:**
+- React 18
+- Vite
+- CSS3
 
-## Expanding the ESLint configuration
+**Backend:**
+- Node.js
+- Express.js
+- MongoDB with Mongoose
+- CORS enabled
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Project Structure
+
+```
+.
+├── backend/
+│   ├── server.js              # Express server setup
+│   ├── product.model.js       # Mongoose schema
+│   ├── product.controller.js  # CRUD controllers
+│   └── products.router.js     # API routes
+├── src/
+│   ├── App.jsx               # Main React component
+│   ├── main.jsx              # React entry point
+│   └── style.css             # Styles
+└── package.json
+```
+
+## 🏃 Running Locally
+
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB Atlas account (or local MongoDB)
+
+### Backend Setup
+
+1. Navigate to backend folder:
+```bash
+cd backend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create `.env` file in `backend/` folder:
+```env
+MONGO_URI=your_mongodb_connection_string
+```
+
+4. Start the server:
+```bash
+npm start
+```
+
+Server runs on `http://localhost:5000`
+
+### Frontend Setup
+
+1. Navigate to project root:
+```bash
+cd ..
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create `.env` file in root (optional for local dev):
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+4. Start the dev server:
+```bash
+npm run dev
+```
+
+Frontend runs on `http://localhost:5173`
+
+## 🌐 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/products` | Get all products |
+| GET | `/api/products/:id` | Get product by ID |
+| POST | `/api/products` | Create new product |
+| PUT | `/api/products/:id` | Update product by ID |
+| DELETE | `/api/products/:id` | Delete product by ID |
+
+## 📝 API Request Examples
+
+**Create Product:**
+```json
+POST /api/products
+{
+  "name": "Laptop",
+  "qty": 10,
+  "price": 999.99
+}
+```
+
+**Update Product:**
+```json
+PUT /api/products/:id
+{
+  "name": "Laptop Pro",
+  "qty": 5,
+  "price": 1299.99
+}
+```
+
+## 🚀 Deployment
+
+This app is deployed on Render:
+- **Frontend**: [Your frontend URL]
+- **Backend API**: [Your backend URL]
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 👤 Author
+
+Your Name
+- GitHub: [@yourusername](https://github.com/yourusername)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+---
+
+⭐ Star this repo if you found it helpful!
