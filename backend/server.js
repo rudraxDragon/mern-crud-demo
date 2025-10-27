@@ -11,9 +11,6 @@ app.use(cors())
 app.use(e.json())
 app.use('/api/products', routes)
 
-
-
-
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('db connected')
@@ -22,5 +19,3 @@ mongoose.connect(process.env.MONGO_URI)
     })
   })
   .catch(error => console.log('db failled to connect: ', error))
-
-

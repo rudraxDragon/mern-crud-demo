@@ -350,3 +350,44 @@ table tbody tr:last-child {
     padding: 6px 8px;
   }
 }
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.spinner {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, burlywood 0deg 60deg, transparent 60deg);
+  mask: radial-gradient(farthest-side, transparent 75%, black 76%);
+  -webkit-mask: radial-gradient(farthest-side, transparent 75%, black 76%);
+  animation: spin 1.4s linear infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  margin-top: 20px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.timer-text {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #5c4033;
+}
+
+.note {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #7b5e57;
+  opacity: 0.8;
+}
+

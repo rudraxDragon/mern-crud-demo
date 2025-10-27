@@ -34,3 +34,6 @@ lerna-debug.log*
 
 # Testing
 coverage/
+
+# Local Netlify folder
+.netlify

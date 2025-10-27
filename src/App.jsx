@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import './style.css'
 
 
@@ -19,9 +19,12 @@ export default function App() {
   const [grabID, setGrabID] = useState('')
   const [productLoaded, setProductLoaded] = useState(false)
 
+  const [timerDisplay, setTimerDisplay] = useState("2:50")
+
   const API_URL = 'https://mern-crud-demo.onrender.com' || 'http://localhost:5000';
 
   const fetchProducts = async () => {
+    setLoading(true)
     const response = await fetch(`${API_URL}/api/products`)
     const data = await response.json()
 
@@ -33,6 +36,19 @@ export default function App() {
       console.log(response.error)
     }
   }
+
+  useEffect(() => {
+    let totalSeconds = 170
+    if (loading) {
+      const interval = setInterval(() => {
+        totalSeconds--
+        const minutes = Math.floor(totalSeconds / 60)
+        const seconds = totalSeconds % 60
+        setTimerDisplay(`${minutes}:${seconds.toString().padStart(2, "0")}`)
+        if (totalSeconds <= 0) clearInterval(interval)
+      }, 1000)
+    }
+  }, [loading])
 
   useEffect(() => {
     if (viewRead) {
@@ -178,7 +194,7 @@ export default function App() {
       <div className="data_box" >
 
         <div className="civility-message">
-          <p>👋 Welcome! Please be respectful and avoid using abusive language. Thank you for keeping this space friendly! Im using a free server so the loading time might take a few mins for the first fetch :( </p>
+          <p>👋 Welcome! Please be respectful and avoid using abusive language. Thank you for keeping this space friendly! Im using a free server so the loading time might take a few mins for the first fetch :( ; Please use the read function first , once the data is loaded then use create/update/delete</p>
         </div>
 
         <div className="opration_controller">
@@ -211,8 +227,14 @@ export default function App() {
 
         {viewRead && (
           <div className="read_box">
-            {loading ? (<p>loading</p>) :
-              products.length === 0 ? (<p>no products found</p>) :
+            {loading ? (
+              <div className="loader">
+                <div class="spinner"></div>
+                <p className="timer-text">Warming up server... {timerDisplay}</p>
+                <p className="note">(free Render servers sleep after inactivity)</p>
+              </div>
+            ) :
+              products.length === 0 ? (<p>No data found :(</p>) :
                 (<table border="1">
                   <thead>
                     <tr>
@@ -244,6 +266,7 @@ export default function App() {
                 <input type="text" value={grabID} onChange={e => setGrabID(e.target.value)} />
                 <button className="btn" type="submit">Submit</button>
               </form>
+
             ) : (
               <form className="update_form" onSubmit={handleUpdateData}>
 
@@ -292,3 +315,4 @@ export default function App() {
     </>
   )
 }
+
